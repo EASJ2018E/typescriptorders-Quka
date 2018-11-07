@@ -1,4 +1,5 @@
 import { OrderLine } from "./OrderLine";
+import { Order } from "./Order";
 
 // OrderLine example
 let orderLine: OrderLine = new OrderLine({
@@ -7,11 +8,10 @@ let orderLine: OrderLine = new OrderLine({
     UnitPriceDiscount: 10,
     UnitPrice: 40
 });
-console.log(orderLine);
 
-// OrderLineList
-let OrderLineList: OrderLine[] = [];
-OrderLineList.push(
+// orderLineList
+let orderLineList: OrderLine[] = [];
+orderLineList.push(
     new OrderLine({
         ProductId: 1322,
         OrderQty: 3,
@@ -31,4 +31,8 @@ OrderLineList.push(
         UnitPrice: 40
     })
 );
-console.log(OrderLineList);
+
+// Create new Order
+let order: Order = new Order(1, orderLineList);
+console.log(order);
+console.log("Sum total of product prices: [" + order.TotalSum() + "] DKK");
