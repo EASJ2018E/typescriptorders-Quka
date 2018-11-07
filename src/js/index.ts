@@ -1,12 +1,34 @@
-interface Person {
-    firstName: string;
-    lastName: string;
-}
+import { OrderLine } from "./OrderLine";
 
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
+// OrderLine example
+let orderLine: OrderLine = new OrderLine({
+    ProductId: 1322,
+    OrderQty: 3,
+    UnitPriceDiscount: 10,
+    UnitPrice: 40
+});
+console.log(orderLine);
 
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
+// OrderLineList
+let OrderLineList: OrderLine[] = [];
+OrderLineList.push(
+    new OrderLine({
+        ProductId: 1322,
+        OrderQty: 3,
+        UnitPriceDiscount: 10,
+        UnitPrice: 40
+    }),
+    new OrderLine({
+        ProductId: 1322,
+        OrderQty: 3,
+        UnitPriceDiscount: 10,
+        UnitPrice: 40
+    }),
+    new OrderLine({
+        ProductId: 1322,
+        OrderQty: 3,
+        UnitPriceDiscount: 10,
+        UnitPrice: 40
+    })
+);
+console.log(OrderLineList);
